@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert to Uppercase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #upper {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff0000;
+        }
+        
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Convert String to Uppercase</h1>
+    </nav>
+    <div id="upper">
+        <form action="/touppercase" method="post">
+            <label for="inputString">Enter a string:</label>
+            <input type="text" id="inputString" name="inputString">
+            <input type="submit" value="Convert">
+        </form>
+        <hr>
+        {% if result %}
+        <p>Converted string: {{ result }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

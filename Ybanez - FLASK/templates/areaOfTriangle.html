@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 16px);
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff0000;
+        }
+
+        p {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p#result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Triangle Area Calculator</h1>
+
+    <form method="post" action="/areaOfTriangle">
+        <label for="base">Base:</label>
+        <input type="number" name="base" required>
+        <br>
+
+        <label for="height">Height:</label>
+        <input type="number" name="height" required>
+        <br>
+
+        <input type="submit" value="Calculate Area">
+    </form>
+
+    {% if area is not none %}
+        <p id="result">Area of the triangle: {{ area }}</p>
+    {% endif %}
+</body>
+</html>
